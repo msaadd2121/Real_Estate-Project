@@ -37,7 +37,7 @@ export default function UpdateListing() {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/get/${listingId}`,
+        `${import.meta.env.VITE_BASE_URL}/api/get/${listingId}`,
         {
           withCredentials: true,
         }
@@ -91,7 +91,7 @@ export default function UpdateListing() {
       });
 
       const response = await axios.post(
-        "http://localhost:5000/api/upload-images",
+        `${import.meta.env.VITE_BASE_URL}/api/upload-images`,
         imageData,
         {
           withCredentials: true,

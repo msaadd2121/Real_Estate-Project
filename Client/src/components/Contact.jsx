@@ -14,7 +14,7 @@ function Contact({ listing }) {
     const fetchContact = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/user/${listing.userRef}`,
+          `${import.meta.env.VITE_BASE_URL}/api/user/${listing.userRef}`,
           {
             withCredentials: true,
           },

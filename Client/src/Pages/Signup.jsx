@@ -18,7 +18,7 @@ export default function Signup() {
 
     axios
       .post(
-        "http://localhost:5000/api/signup",
+        `${import.meta.env.VITE_BASE_URL}/api/signup`,
         {
           username,
           email,

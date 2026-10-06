@@ -116,7 +116,7 @@ function Search() {
         const searchQuery = urlParams.toString();
 
         const res = await fetch(
-          `http://localhost:5000/api/getlisting?${searchQuery}`,
+          `${import.meta.env.VITE_BASE_URL}/api/getlisting?${searchQuery}`,
         );
 
         const data = await res.json();
@@ -154,7 +154,7 @@ function Search() {
       const searchQuery = urlParams.toString();
 
       const res = await fetch(
-        `http://localhost:5000/api/getlisting?${searchQuery}`,
+        `${import.meta.env.VITE_BASE_URL}/api/getlisting?${searchQuery}`,
       );
 
       const data = await res.json();

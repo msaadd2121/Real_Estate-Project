@@ -16,9 +16,12 @@ export default function Header() {
   useEffect(() => {
     const getCurrentUser = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/me", {
-          withCredentials: true,
-        });
+        const res = await axios.get(
+          `${import.meta.env.VITE_BASE_URL}/api/user/${listing.userRef}`,
+          {
+            withCredentials: true,
+          },
+        );
 
         dispatch(signInSuccess(res.data.user));
       } catch (error) {

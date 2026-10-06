@@ -10,7 +10,7 @@ export default function Home() {
     const fetchRentListings = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/getlisting?type=rent&limit=4"
+          `${import.meta.env.VITE_BASE_URL}/api/getlisting?type=rent&limit=4`
         );
 
         const data = await res.json();
@@ -25,7 +25,7 @@ export default function Home() {
     const fetchSaleListings = async () => {
       try {
         const res = await fetch(
-          "http://localhost:5000/api/getlisting?type=sell&limit=4"
+          `${import.meta.env.VITE_BASE_URL}/api/getlisting?type=sell&limit=4`
         );
 
         const data = await res.json();

@@ -49,7 +49,7 @@ export default function Profile() {
       }
 
       const res = await axios.post(
-        `http://localhost:5000/api/update/${currentuser._id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/update/${currentuser._id}`,
         data,
         {
           withCredentials: true,
@@ -77,7 +77,7 @@ export default function Profile() {
   const handleShowListing = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/listings/${currentuser._id}`,
+        `${import.meta.env.VITE_BASE_URL}/api/listings/${currentuser._id}`,
         {
           withCredentials: true,
         },
@@ -98,7 +98,7 @@ export default function Profile() {
   const handleListingDelete = async (listingId) => {
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/delete/${listingId}`,
+        `${import.meta.env.VITE_BASE_URL}/api/delete/${listingId}`,
         {
           withCredentials: true,
         },
@@ -116,7 +116,7 @@ export default function Profile() {
   };
   const handleSignOut = async () => {
   try {
-    await axios.get("http://localhost:5000/api/logout", {
+    await axios.get(`${import.meta.env.VITE_BASE_URL}/api/logout`, {
       withCredentials: true,
     });
 

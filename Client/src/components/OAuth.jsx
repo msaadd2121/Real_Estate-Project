@@ -36,7 +36,7 @@ function OAuth() {
 
       // Backend ko data send
       const response = await axios.post(
-        "http://localhost:5000/api/google",
+        `${import.meta.env.VITE_BASE_URL}/api/google`,
         {
           name,
           email,

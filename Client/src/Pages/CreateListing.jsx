@@ -62,7 +62,7 @@ export default function CreateListing() {
       });
 
       const response = await axios.post(
-        "http://localhost:5000/api/upload-images",
+        `${import.meta.env.VITE_BASE_URL}/api/upload-images`,
         imageData,
         {
           withCredentials: true,
@@ -150,7 +150,7 @@ export default function CreateListing() {
       };
 
       const response = await axios.post(
-        "http://localhost:5000/api/createlisting",
+        `${import.meta.env.VITE_BASE_URL}/api/createlisting`,
         listingData,
         {
           withCredentials: true,
