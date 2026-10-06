@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: "real-estate-project-six-eosin.vercel.app",
+    origin: "https://real-estate-project-six-eosin.vercel.app",
     credentials: true,
   }),
 );
