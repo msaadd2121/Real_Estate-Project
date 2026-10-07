@@ -1,4 +1,3 @@
-import React from "react";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import { app } from "../firebase";
 import axios from "axios";
@@ -21,6 +20,11 @@ function OAuth() {
 
       const provider = new GoogleAuthProvider();
       const auth = getAuth(app);
+
+      // Har baar Google account select karne ka option
+      provider.setCustomParameters({
+        prompt: "select_account",
+      });
 
       // Google Sign In
       const result = await signInWithPopup(auth, provider);
