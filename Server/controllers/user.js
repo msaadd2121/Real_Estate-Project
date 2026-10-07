@@ -3,18 +3,25 @@ const bcrypt = require("bcrypt");
 const { User } = require("../models/user");
 const { ErrorHandler } = require("../util/errorhandler");
 const { sendToken } = require("../util/jwttoken");
-async function UserSignUp(req, res) {
-  const { username, email, password } = req.body;
 
-  const user = await User.create({
-    username,
-    email,
-    password,
-  });
-  if (user) {
-    return next(new ErrorHandler("Email already exists", 400));
+async function UserSignUp(req, res, next) {
+  try {
+    const { username, email, password } = req.body;
+
+    const user = await User.create({
+      username,
+      email,
+      password,
+    });
+
+    sendToken(user, 201, res);
+  } catch (error) {
+    if (error.code === 11000) {
+      return next(new ErrorHandler("Email already exists", 400));
+    }
+
+    next(error);
   }
-  sendToken(user, 201, res);
 }
 async function UserSignIn(req, res, next) {
   const { email, password } = req.body;
