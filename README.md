@@ -1,6 +1,6 @@
 # Real Estate Listing Platform
 
-[![Live Demo](https://real-estate-project-six-eosin.vercel.app/)
+[![Live Demo] (https://real-estate-project-six-eosin.vercel.app/)
 
 ## Overview
 
@@ -8,7 +8,7 @@ A full-stack real estate web application built with React.js, Node.js, Express.j
 
 The project demonstrates how a modern real estate platform can be structured using a separate frontend and backend, RESTful APIs, database-driven property management, authentication middleware, and cloud deployment.
 
-##Key Features
+## Features
 
 User Registration & Authentication — Users can create accounts and securely sign in to the application.
 
